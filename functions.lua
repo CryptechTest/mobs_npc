@@ -317,7 +317,7 @@ function mobs_npc.shop_trade(self, clicker, race)
 	if not self.game_name then
 
 		self.game_name = tostring(race.names[math.random(1, #race.names)])
-		self.nametag = S("@1", self.game_name)
+		self.nametag = S("Trader @1", self.game_name)
 
 		self.object:set_properties({
 			nametag = self.nametag,
