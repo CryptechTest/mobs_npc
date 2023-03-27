@@ -236,6 +236,7 @@ minetest.register_node(":mobs:trader_block", {
 	-- punch block to spawn trader
 	on_punch = function(pos, node, puncher, pointed_thing)
 		place_trader(pos, node)
+		minetest.set_node(pos, {name="default:stone"})
 	end,
 
 	on_rotate = screwdriver and screwdriver.rotate_simple,
