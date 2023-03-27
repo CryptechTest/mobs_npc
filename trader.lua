@@ -65,7 +65,7 @@ mobs:register_mob("mobs_npc:trader", {
 	attacks_monsters = true,
 	attack_animals = false,
 	attack_npcs = false,
-	pathfinding = false,
+	pathfinding = true,
 	hp_min = 10,
 	hp_max = 20,
 	armor = 100,
