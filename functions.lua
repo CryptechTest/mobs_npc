@@ -402,7 +402,6 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 		end
 
 		if self ~= nil then
-
 			local trade_number = tonumber(trade:split("#")[2])
 
 			if trade_number ~= nil and self.trades[trade_number] ~= nil then
