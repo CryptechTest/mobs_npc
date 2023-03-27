@@ -8,8 +8,14 @@ local mcl = minetest.get_modpath("mcl_core") ~= nil
 mobs.human = {
 
 	names = {
-		"Bob", "Duncan", "Bill", "Tom", "James", "Ian", "Lenny",
-		"Dylan", "Ethan", "Sam"
+		"Zara", "Hikaru", "Xander", "Nadia", "Darius", "Luna", "Orion",
+		"Vega", "Lyra", "Cassius", "Nova", "Atlas", "Selene", "Galileo",
+		"Astra", "Nebula", "Phoenix", "Solaris", "Cygnus", "Andromeda",
+		"Arcturus", "Polaris", "Antares", "Bellatrix", "Betelgeuse",
+		"Sirius", "Rigel", "Altair", "Proxima", "Capella", "Deneb",
+		"Aldebaran", "Regulus", "Spica", "Adhara", "Alnitak", "Alnair",
+		"Castor", "Fomalhaut", "Gacrux", "Hamal", "Izar", "Kaus", "Mimosa",
+		"Nunki", "Pollux", "Shaula", "Suhaila", "Tarazed"
 	},
 
 	items = {
