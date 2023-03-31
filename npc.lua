@@ -148,12 +148,13 @@ if not mobs.custom_spawn_npc then
 
 	mobs:spawn({
 		name = "mobs_npc:npc",
-		nodes = {mcl and "mcl_core:stonebrick" or "default:brick"},
-		neighbors = {mcl and "mcl_flowers:tallgrass" or "default:grass_3"},
-		min_light = 10,
+		nodes = {"default:dirt_with_grass", "default:dirt", "default:dirt_with_dry_grass", "default:dry_dirt_with_dry_grass"},
+		neighbors = {"group:grass"},
+		min_light = 12,
+		interval = 60,
 		chance = 10000,
-		active_object_count = 1,
 		min_height = 0,
+		max_height = 255,
 		day_toggle = true
 	})
 end
