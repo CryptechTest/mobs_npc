@@ -148,10 +148,10 @@ if not mobs.custom_spawn_npc then
 
 	mobs:spawn({
 		name = "mobs_npc:npc",
-		nodes = {"default:dirt_with_grass", "default:dirt", "default:dirt_with_dry_grass", "default:dry_dirt_with_dry_grass"},
+		nodes = {"default:dirt_with_grass", "default:dirt_with_dry_grass", "default:dry_dirt_with_dry_grass"},
 		neighbors = {"group:grass"},
-		min_light = 12,
-		interval = 60,
+		min_light = 13,
+		interval = 240,
 		chance = 10000,
 		min_height = 0,
 		max_height = 255,
