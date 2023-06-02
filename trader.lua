@@ -1,4 +1,3 @@
-
 local S = mobs_npc.S
 local mcl = minetest.get_modpath("mcl_core") ~= nil
 
@@ -6,7 +5,6 @@ local mcl = minetest.get_modpath("mcl_core") ~= nil
 -- define table containing names for use and shop items for sale
 
 mobs.human = {
-
 	names = {
 		"Zara", "Hikaru", "Xander", "Nadia", "Darius", "Luna", "Orion",
 		"Vega", "Lyra", "Cassius", "Nova", "Atlas", "Selene", "Galileo",
@@ -20,44 +18,44 @@ mobs.human = {
 
 	items = {
 		--{item for sale, price, chance of appearing in trader's inventory}
-		{mcl and "mcl_core:apple 10" or "default:apple 10",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 10},
-		{mcl and "mcl_farming:bread 10" or "farming:bread 10",
-				mcl and "mcl_core:gold_ingot 4" or "default:gold_ingot 4", 5},
-		{mcl and "mcl_core:clay 10" or "default:clay 10",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 12},
-		{mcl and "mcl_core:stonebrick 10" or "default:brick 10",
-				mcl and "mcl_core:gold_ingot 4" or "default:gold_ingot 4", 17},
-		{mcl and "mcl_core:glass 10" or "default:glass 10",
-				mcl and "mcl_core:gold_ingot 4" or "default:gold_ingot 4", 17},
-		{mcl and "mcl_core:obsidian 10" or "default:obsidian 10",
-				mcl and "mcl_core:gold_ingot 15" or "default:gold_ingot 15", 50},
-		{mcl and "mcl_core:diamond 1" or "default:diamond 1",
-				mcl and "mcl_core:gold_ingot 5" or "default:gold_ingot 5", 40},
-		{mcl and "mcl_farming:wheat_item 10" or "farming:wheat 10",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 17},
-		{mcl and "mcl_core:tree 5" or "default:tree 5",
-				mcl and "mcl_core:gold_ingot 4" or "default:gold_ingot 4", 20},
-		{mcl and "mcl_core:stone 10" or "default:stone 10",
-				mcl and "mcl_core:gold_ingot 8" or "default:gold_ingot 8", 17},
-		{mcl and "mcl_core:stonebrick 10" or "default:desert_stone 10",
-				mcl and "mcl_core:gold_ingot 8" or "default:gold_ingot 8", 27},
-		{mcl and "mcl_core:sapling 1" or "default:sapling 1",
-				mcl and "mcl_core:gold_ingot 1" or "default:gold_ingot 1", 7},
-		{mcl and "mcl_tools:pick_iron 1" or "default:pick_steel 1",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 7},
-		{mcl and "mcl_tools:sword_iron 1" or "default:sword_steel 1",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 17},
-		{mcl and "mcl_tools:shovel_iron 1" or "default:shovel_steel 1",
-				mcl and "mcl_core:gold_ingot 1" or "default:gold_ingot 1", 17},
-		{mcl and "mcl_core:cactus 2" or "default:cactus 2",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 40},
-		{mcl and "mcl_core:paper 2" or "default:papyrus 2",
-				mcl and "mcl_core:gold_ingot 2" or "default:gold_ingot 2", 40},
-		{mcl and "mcl_core:iron_nugget 1" or "default:mese_crystal_fragment 1",
-				mcl and "mcl_core:dirt_with_grass 10" or "default:dirt_with_grass 10", 90},
-		{mcl and "mcl_copper:raw_copper 1" or "default:mese_crystal_fragment 1",
-				mcl and "mcl_core:gold_ingot 5" or "default:gold_ingot 5", 90}
+		{ mcl and "mcl_core:apple 10" or "default:apple 10",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 10 },
+		{ mcl and "mcl_farming:bread 10" or "farming:bread 10",
+			mcl and "mcl_core:gold_ingot 4" or "testcoin:coin 4", 5 },
+		{ mcl and "mcl_core:clay 10" or "default:clay 10",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 12 },
+		{ mcl and "mcl_core:stonebrick 10" or "default:brick 10",
+			mcl and "mcl_core:gold_ingot 4" or "testcoin:coin 4", 17 },
+		{ mcl and "mcl_core:glass 10" or "default:glass 10",
+			mcl and "mcl_core:gold_ingot 4" or "testcoin:coin 4", 17 },
+		{ mcl and "mcl_core:obsidian 10" or "default:obsidian 10",
+			mcl and "mcl_core:gold_ingot 15" or "testcoin:coin 15", 50 },
+		{ mcl and "mcl_core:diamond 1" or "default:diamond 1",
+			mcl and "mcl_core:gold_ingot 5" or "testcoin:coin 5", 40 },
+		{ mcl and "mcl_farming:wheat_item 10" or "farming:wheat 10",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 17 },
+		{ mcl and "mcl_core:tree 5" or "default:tree 5",
+			mcl and "mcl_core:gold_ingot 4" or "testcoin:coin 4", 20 },
+		{ mcl and "mcl_core:stone 10" or "default:stone 10",
+			mcl and "mcl_core:gold_ingot 8" or "testcoin:coin 8", 17 },
+		{ mcl and "mcl_core:stonebrick 10" or "default:desert_stone 10",
+			mcl and "mcl_core:gold_ingot 8" or "testcoin:coin 8", 27 },
+		{ mcl and "mcl_core:sapling 1" or "default:sapling 1",
+			mcl and "mcl_core:gold_ingot 1" or "testcoin:coin 1", 7 },
+		{ mcl and "mcl_tools:pick_iron 1" or "default:pick_steel 1",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 7 },
+		{ mcl and "mcl_tools:sword_iron 1" or "default:sword_steel 1",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 17 },
+		{ mcl and "mcl_tools:shovel_iron 1" or "default:shovel_steel 1",
+			mcl and "mcl_core:gold_ingot 1" or "testcoin:coin 1", 17 },
+		{ mcl and "mcl_core:cactus 2" or "default:cactus 2",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 40 },
+		{ mcl and "mcl_core:paper 2" or "default:papyrus 2",
+			mcl and "mcl_core:gold_ingot 2" or "testcoin:coin 2", 40 },
+		{ mcl and "mcl_core:iron_nugget 1" or "default:mese_crystal_fragment 1",
+			mcl and "mcl_core:dirt_with_grass 10" or "default:dirt_with_grass 10", 90 },
+		{ mcl and "mcl_copper:raw_copper 1" or "default:mese_crystal_fragment 1",
+			mcl and "mcl_core:gold_ingot 5" or "testcoin:coin 5", 90 }
 	}
 }
 
@@ -75,14 +73,14 @@ mobs:register_mob("mobs_npc:trader", {
 	hp_min = 10,
 	hp_max = 20,
 	armor = 100,
-	collisionbox = {-0.35,-1.0,-0.35, 0.35,0.8,0.35},
+	collisionbox = { -0.35, -1.0, -0.35, 0.35, 0.8, 0.35 },
 	visual = "mesh",
 	mesh = "mobs_character.b3d",
 	textures = {
-		{"mobs_trader.png"}, -- by Frerin
-		{"mobs_trader2.png"},
-		{"mobs_trader3.png"},
-		{"mobs_trader4.png"} -- female by Astrobe
+		{ "mobs_trader.png" }, -- by Frerin
+		{ "mobs_trader2.png" },
+		{ "mobs_trader3.png" },
+		{ "mobs_trader4.png" } -- female by Astrobe
 	},
 	makes_footstep_sound = true,
 	sounds = {},
@@ -93,7 +91,7 @@ mobs:register_mob("mobs_npc:trader", {
 	water_damage = 0,
 	lava_damage = 2,
 	light_damage = 0,
-	follow = {mcl and "mcl_core:diamond" or "default:diamond"},
+	follow = { mcl and "mcl_core:diamond" or "default:diamond" },
 	view_range = 15,
 	owner = "",
 	order = "",
@@ -119,12 +117,10 @@ mobs:register_mob("mobs_npc:trader", {
 			self.order = "wander"
 		end)
 		mobs_npc.shop_trade(self, clicker, mobs.human)
-
 	end,
 
 	-- show that npc is a trader once spawned
 	on_spawn = function(self)
-
 		self.nametag = S("Trader")
 
 		self.object:set_properties({
@@ -139,7 +135,7 @@ mobs:register_mob("mobs_npc:trader", {
 
 -- add spawn egg
 mobs:register_egg("mobs_npc:trader", S("Trader"),
-		mcl and "mcl_core_sandstone_top.png" or "default_sandstone.png", 1)
+	mcl and "mcl_core_sandstone_top.png" or "default_sandstone.png", 1)
 
 
 -- this is only required for servers that previously used the old mobs mod
@@ -156,35 +152,34 @@ end
 mobs_npc.add_trader_list({
 	block = mcl and "mcl_core:ironblock" or "default:tinblock",
 	nametag = "Castro",
-	textures = {"mobs_trader2.png"},
+	textures = { "mobs_trader2.png" },
 	item_list = {
-		{mcl and "mcl_raw_ores:raw_gold 2" or "default:gold_lump 2",
-				mcl and "mcl_core:gold_ingot 3" or "default:gold_ingot 3"},
-		{mcl and "mcl_raw_ores:raw_iron 2" or "default:iron_lump 2",
-				mcl and "mcl_core:iron_ingot 2" or "default:steel_ingot 2"},
-		{mcl and "mcl_copper:raw_copper 2" or "default:copper_lump 2",
-				mcl and "mcl_copper:copper_ingot 3" or "default:copper_ingot 3"},
-		{mcl and "mcl_core:iron_nugget 2" or "default:tin_lump 2",
-				mcl and "mcl_core:iron_ingot 3" or "default:tin_ingot 3"}
+		{ mcl and "mcl_raw_ores:raw_gold 2" or "default:gold_lump 2",
+			mcl and "mcl_core:gold_ingot 3" or "testcoin:coin 3" },
+		{ mcl and "mcl_raw_ores:raw_iron 2" or "default:iron_lump 2",
+			mcl and "mcl_core:iron_ingot 2" or "default:steel_ingot 2" },
+		{ mcl and "mcl_copper:raw_copper 2" or "default:copper_lump 2",
+			mcl and "mcl_copper:copper_ingot 3" or "default:copper_ingot 3" },
+		{ mcl and "mcl_core:iron_nugget 2" or "default:tin_lump 2",
+			mcl and "mcl_core:iron_ingot 3" or "default:tin_ingot 3" }
 	}
 })
 
 
 -- helper function
 local function place_trader(pos, node)
-
 	local face = node.param2
 	local pos2, def
 
 	-- find which way block is facing
 	if face == 0 then
-		pos2 = {x = pos.x, y = pos.y, z = pos.z - 1}
+		pos2 = { x = pos.x, y = pos.y, z = pos.z - 1 }
 	elseif face == 1 then
-		pos2 = {x = pos.x - 1, y = pos.y, z = pos.z}
+		pos2 = { x = pos.x - 1, y = pos.y, z = pos.z }
 	elseif face == 2 then
-		pos2 = {x = pos.x, y = pos.y, z = pos.z + 1}
+		pos2 = { x = pos.x, y = pos.y, z = pos.z + 1 }
 	elseif face == 3 then
-		pos2 = {x = pos.x + 1, y = pos.y, z = pos.z}
+		pos2 = { x = pos.x + 1, y = pos.y, z = pos.z }
 	else
 		return
 	end
@@ -197,7 +192,7 @@ local function place_trader(pos, node)
 	end
 
 	-- get block below
-	local bnode = minetest.get_node({x = pos2.x, y = pos2.y - 1, z = pos2.z})
+	local bnode = minetest.get_node({ x = pos2.x, y = pos2.y - 1, z = pos2.z })
 
 	pos2.y = pos2.y + 0.5
 
@@ -208,11 +203,9 @@ local function place_trader(pos, node)
 	if not ent then return end -- nil check
 
 	for n = 1, #trader_lists do
-
 		def = trader_lists[n]
 
 		if bnode.name == def.block then
-
 			ent.trades = def.item_list
 			ent.nametag = def.nametag
 			ent.game_name = def.nametag
@@ -229,14 +222,14 @@ local function place_trader(pos, node)
 
 	-- pop sound
 	minetest.sound_play("default_place_node_hard", {
-			pos = pos, gain = 1.0, max_hear_distance = 5, pitch = 2.0})
+		pos = pos, gain = 1.0, max_hear_distance = 5, pitch = 2.0 })
 end
 
 
 -- trader block (punch to spawn trader)
 minetest.register_node(":mobs:trader_block", {
 	description = S("Place this and punch to spawn Trader"),
-	groups = {cracky = 3},
+	groups = { cracky = 3 },
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = {
@@ -247,7 +240,7 @@ minetest.register_node(":mobs:trader_block", {
 	-- punch block to spawn trader
 	on_punch = function(pos, node, puncher, pointed_thing)
 		place_trader(pos, node)
-		minetest.set_node(pos, {name="default:stone"})
+		minetest.set_node(pos, { name = "default:stone" })
 	end,
 
 	on_rotate = screwdriver and screwdriver.rotate_simple,
@@ -262,8 +255,8 @@ local tb = mcl and "mcl_core:ironblock" or "default:tinblock"
 minetest.register_craft({
 	output = "mobs:trader_block",
 	recipe = {
-		{"group:stone", "group:stone", "group:stone"},
-		{"group:stone", db, "group:stone"},
-		{"group:stone", tb, "group:stone"}
+		{ "group:stone", "group:stone", "group:stone" },
+		{ "group:stone", db,            "group:stone" },
+		{ "group:stone", tb,            "group:stone" }
 	}
 })
