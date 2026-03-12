@@ -347,12 +347,27 @@ function mobs_npc.shop_trade(self, clicker, race)
 				y = i - 5.5
 			end
 
-			formspec_trade_list = formspec_trade_list
-			.. "item_image_button[".. x ..",".. y ..";1,1;"
-				.. self.trades[i][2] .. ";prices#".. i .."#".. self.id ..";]"
-			.. "item_image_button[".. x + 2 ..",".. y ..";1,1;"
-				.. self.trades[i][1] .. ";goods#".. i .."#".. self.id ..";]"
-			.. "image[".. x + 1 ..",".. y ..";1,1;gui_arrow_blank.png]"
+			local price = self.trades[i][2]
+            local goods = self.trades[i][1]
+
+            local psplit = price:split(" ")
+            local gsplit = goods:split(" ")
+
+            -- replace : with _ 
+            local price_image = (psplit[1]:gsub(":", "_") .. ".png") or ""
+
+            local goods_image = (gsplit[1]:gsub(":", "_") .. ".png") or ""
+
+            if #gsplit == 2 then
+                goods = gsplit[1] .. " " .. S(gsplit[2])
+            end
+
+            formspec_trade_list = formspec_trade_list
+            .. "image_button[".. x ..",".. y ..";1,1;"
+                .. price_image .. ";prices#".. i .."#".. self.id ..";]"
+            .. "image_button[".. x + 2 ..",".. y ..";1,1;"
+                .. goods_image .. ";goods#".. i .."#".. self.id ..";]"
+            .. "image[".. x + 1 ..",".. y ..";1,1;gui_arrow_blank.png]"
 		end
 	end
 
