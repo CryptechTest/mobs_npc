@@ -67,6 +67,7 @@ mobs:register_mob("mobs_npc:trader", {
 	damage = 3,
 	attack_type = "dogfight",
 	attacks_monsters = true,
+	attack_players = false,
 	attack_animals = false,
 	attack_npcs = false,
 	pathfinding = true,
