@@ -347,27 +347,63 @@ function mobs_npc.shop_trade(self, clicker, race)
 				y = i - 5.5
 			end
 
-			local price = self.trades[i][2]
+			local function count_label_at(px, py, count)
+                if type(count) ~= "number" or count <= 1 then
+                    return ""
+                end
+                -- Overlay near bottom-right of the 1x1 image button.
+                return "label[" .. (px + 0.62) .. "," .. (py + 0.45) .. ";"
+                    .. minetest.formspec_escape(tostring(count)) .. "]"
+            end
+
+
+            local function inv_image_from_def(itemname, itemdef)
+                if itemdef then
+                    if itemdef.inventory_image and itemdef.inventory_image ~= "" then
+                        return itemdef.inventory_image
+                    elseif itemdef.wield_image and itemdef.wield_image ~= "" then
+                        return itemdef.wield_image
+                    else
+                        local node_def = minetest.registered_nodes[itemname]
+                        if node_def then
+                            --  tiles = {tile definition 1, def2, def3, def4, def5, def6},
+                            -- Textures of node; +Y, -Y, +X, -X, +Z, -Z
+                            -- List can be shortened to needed length.
+                            local tiles = node_def.tiles
+                            return minetest.inventorycube(
+                                tiles[1] or tiles[2] or tiles[3] or tiles[4] or tiles[5] or tiles[6] or itemname .. ".png")
+                        end
+                    end
+                end
+            
+                return (itemname:gsub(":", "_") .. ".png")
+            end
+
+
+            local price = self.trades[i][2]
             local goods = self.trades[i][1]
 
             local psplit = price:split(" ")
             local gsplit = goods:split(" ")
 
+            local pdef = minetest.registered_items[psplit[1]]
+            local gdef = minetest.registered_items[gsplit[1]]
+
             -- replace : with _ 
-            local price_image = (psplit[1]:gsub(":", "_") .. ".png") or ""
+            local price_image = inv_image_from_def(psplit[1], pdef) or ""
+            local price_count = tonumber(psplit[2]) or 1
 
-            local goods_image = (gsplit[1]:gsub(":", "_") .. ".png") or ""
-
-            if #gsplit == 2 then
-                goods = gsplit[1] .. " " .. S(gsplit[2])
-            end
+            local goods_image = inv_image_from_def(gsplit[1], gdef) or ""
+            local goods_count = tonumber(gsplit[2]) or 1
 
             formspec_trade_list = formspec_trade_list
             .. "image_button[".. x ..",".. y ..";1,1;"
                 .. price_image .. ";prices#".. i .."#".. self.id ..";]"
-            .. "image_button[".. x + 2 ..",".. y ..";1,1;"
-                .. goods_image .. ";goods#".. i .."#".. self.id ..";]"
-            .. "image[".. x + 1 ..",".. y ..";1,1;gui_arrow_blank.png]"
+            .. count_label_at(x, y, price_count)
+             .. "image_button[".. x + 2 ..",".. y ..";1,1;"
+                 .. goods_image .. ";goods#".. i .."#".. self.id ..";]"
+            .. count_label_at(x + 1.9, y, goods_count)
+             .. "image[".. x + 1 ..",".. y ..";1,1;gui_arrow_blank.png]"
 		end
 	end
 
